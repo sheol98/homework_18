@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Задача №4</title>
+  </head>
+  <body>
+    <script>
+      const randomDesire = [
+        "Подорожувати по всім континентах світу.",
+        "Навчитися грати на музичному інструменті.",
+        "Зустріти свого ідола.",
+        "Знайти ідеальну роботу, яка приносить задоволення і достаток.",
+        "Допомагати тим, хто потребує допомоги, наскільки це можливо.",
+        "Стати успішним підприємцем і реалізувати свій власний бізнес.",
+        "Знайти справжню любов і побудувати довгострокові та щасливі відносини.",
+        "Подорожувати в часі і побачити історичні події своїми очима.",
+        "Відвідати космос і побачити Землю з орбіти.",
+        "Побудувати свій будинок мрії, ідеальне пристановище, де можна бути з сім'єю та друзями.",
+      ];
+      window.onload = function () {
+        for (let i = 0; i < 3; i++) {
+          let randNum = Math.floor(Math.random() * randomDesire.length);
+          let divWithDesire = document.createElement("div");
+          divWithDesire.innerText = randomDesire[randNum];
+          divWithDesire.className = "divDesire";
+          document.body.append(divWithDesire);
+          randomDesire.splice(randNum, 1);
+        }
+      };
+    </script>
+    <h2>
+      Наперед задано у скрипті масив зі списком бажань. Після завантаження
+      сторінки випадковим чином вибираються 3 і відображаються у окремих div (їх
+      треба створити і додати на сторінку)
+    </h2>
+  </body>
+</html>

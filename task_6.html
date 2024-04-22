@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Задача №6</title>
+  </head>
+  <body>
+    <script>
+      function creatInput() {
+        let countScores = parseInt(
+          document.getElementById("countScores").value
+        );
+        for (let i = 0; i < countScores; i++) {
+          let inp = document.createElement("input");
+          inp.className = "score";
+          document.getElementById("divForInp").append(inp);
+        }
+      }
+      function getAverage() {
+        let scoresList = document.getElementsByClassName("score");
+        let totalSum = 0;
+        for (const score of scoresList) {
+          totalSum += parseInt(score.value);
+        }
+        document.getElementById("res").innerText = `Середній бал становить - ${(
+          totalSum / scoresList.length
+        ).toFixed(1)}`;
+      }
+      window.onload = function () {
+        document.getElementById("creatInp").onclick = creatInput;
+        document.getElementById("getAverage").onclick = getAverage;
+      };
+    </script>
+    <h2>
+      Користувач задає кількість оцінок і натискає на кнопку «get table». В
+      результаті формується таблиця з input, куди користувач вводить оцінки.
+      Після цього натискає на кнопку “get sum” і знаходить середнє значення.
+    </h2>
+    <div>
+      <label>
+        Кількість оцінок
+        <input type="number" id="countScores" />
+      </label>
+      <br />
+      <button id="creatInp">get table</button>
+    </div>
+    <div id="divForInp"></div>
+    <div>
+      <button id="getAverage">get average</button>
+      <br />
+      <span id="res"></span>
+    </div>
+  </body>
+</html>

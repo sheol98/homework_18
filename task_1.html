@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Задача №1</title>
+  </head>
+  <body>
+    <script>
+      function getAdd() {
+        let firstNum = parseFloat(document.getElementById("firstNum").value);
+        let secondNum = parseFloat(document.getElementById("secondNum").value);
+        document.getElementById("result").value = firstNum + secondNum;
+      }
+      function getMinus() {
+        let firstNum = parseFloat(document.getElementById("firstNum").value);
+        let secondNum = parseFloat(document.getElementById("secondNum").value);
+        document.getElementById("result").value = firstNum - secondNum;
+      }
+      function getMult() {
+        let firstNum = parseFloat(document.getElementById("firstNum").value);
+        let secondNum = parseFloat(document.getElementById("secondNum").value);
+        document.getElementById("result").value = firstNum * secondNum;
+      }
+      function getDivis() {
+        let firstNum = parseFloat(document.getElementById("firstNum").value);
+        let secondNum = parseFloat(document.getElementById("secondNum").value);
+        document.getElementById("result").value = firstNum / secondNum;
+      }
+      window.onload = function () {
+        document.getElementById("addBtn").onclick = getAdd;
+        document.getElementById("minusBtn").onclick = getMinus;
+        document.getElementById("multBtn").onclick = getMult;
+        document.getElementById("divisBtn").onclick = getDivis;
+      };
+    </script>
+    <div>
+      <label>
+        First number
+        <input type="number" id="firstNum" />
+      </label>
+      <br />
+      <label>
+        Second number
+        <input type="number" id="secondNum" />
+      </label>
+    </div>
+    <div>
+      <button type="submit" id="addBtn">Додати</button>
+      <button type="submit" id="minusBtn">Відняти</button>
+      <button type="submit" id="multBtn">Помножити</button>
+      <button type="submit" id="divisBtn">Поділити</button>
+    </div>
+    <hr />
+    <div>
+      <label>
+        Результат
+        <input type="number" id="result" value="0" />
+      </label>
+    </div>
+  </body>
+</html>

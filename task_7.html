@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Задача №6</title>
+  </head>
+  <body>
+    <script>
+      function getTotalPrice() {
+        let totalPrice = 0;
+        totalPrice += parseInt(document.getElementById("transport").value);
+        let eats = document.querySelectorAll("input[type=checkbox]");
+        for (const eat of eats) {
+          if (eat.checked) totalPrice += parseInt(eat.value);
+        }
+        let guides = document.querySelectorAll("input[name=guide]");
+        for (const guide of guides) {
+          if (guide.checked) totalPrice += parseInt(guide.value);
+        }
+        document.getElementById(
+          "pForRes"
+        ).innerText = `Загальна вартість - ${totalPrice} ₴`;
+      }
+
+      window.onload = function () {
+        document.getElementById("res").onclick = getTotalPrice;
+      };
+    </script>
+    <h2>
+      Подорож складається з 3 етапів. На кожному етапі користувач може вибрати
+      один з видів транспорту (авто, автобус, літак - випадаючий список),
+      харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х
+      гідів(використати - radio buttons). Ціни визначте самі. Підрахувати
+      загальну вартість.
+    </h2>
+    <hr />
+    <div>
+      <h2>Виберіть один з видів транспорту</h2>
+      <select id="transport">
+        <option value="450">авто</option>
+        <option value="640">автобус</option>
+        <option value="1280">літак</option>
+      </select>
+    </div>
+    <div>
+      <h2>Виберіть харчування</h2>
+      <label>
+        сніданок
+        <input type="checkbox" value="120" />
+      </label>
+      <label>
+        обід
+        <input type="checkbox" value="210" />
+      </label>
+      <label>
+        вечеря
+        <input type="checkbox" value="260" />
+      </label>
+    </div>
+    <div>
+      <h2>Виберіть одного з 3-х гідів</h2>
+      <label>
+        Гід №1
+        <input name="guide" type="radio" value="200" />
+      </label>
+      <label>
+        Гід №2
+        <input name="guide" type="radio" value="300" />
+      </label>
+      <label>
+        Гід №3
+        <input name="guide" type="radio" value="400" />
+      </label>
+    </div>
+    <hr />
+    <div>
+      <button id="res">Розрахувати вартіть подорожі</button>
+      <br />
+      <p id="pForRes"></p>
+    </div>
+  </body>
+</html>

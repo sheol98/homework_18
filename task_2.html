@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Задача №2</title>
+  </head>
+  <body>
+    <script>
+      const courseEuro = 42.37;
+      const courseDollar = 39.79;
+      function convertCurrency() {
+        let quantityGrn = parseFloat(document.getElementById("grn").value);
+        document.getElementById("euro").value = (
+          quantityGrn / courseEuro
+        ).toFixed(2);
+        document.getElementById("dlr").value = (
+          quantityGrn / courseDollar
+        ).toFixed(2);
+      }
+
+      window.onload = function () {
+        document.getElementById("convertBtn").onclick = convertCurrency;
+      };
+    </script>
+    <div>
+      <label>
+        Сума в гривнях
+        <input type="number" id="grn" />
+      </label>
+      <br />
+      <button id="convertBtn">Конвертувати</button>
+    </div>
+    <hr />
+    <div>
+      <label>
+        Сума в євро
+        <input type="number" id="euro" value="0" />
+      </label>
+      <br />
+      <label>
+        Сума в доларах
+        <input type="number" id="dlr" value="0" />
+      </label>
+    </div>
+  </body>
+</html>
